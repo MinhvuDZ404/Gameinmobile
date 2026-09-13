@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <meta name="theme-color" content="#050816" />
+  <title>Nebula Orchard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="game"></div>
+  <div id="vignette"></div>
+  <div id="hud">
+    <div class="topbar">
+      <div class="brand"><span class="brand-dot"></span><span>NEBULA ORCHARD</span></div>
+      <div class="stats">
+        <span>◈ <b id="crystals">0</b>/30</span>
+        <span>⛽ <b id="fuel">100</b>%</span>
+        <span>✦ <b id="credits">250</b></span>
+      </div>
+    </div>
+    <div class="mission"><span class="eyebrow">CURRENT MISSION</span><div id="missionText">Thu hoạch 30 tinh thể phát sáng</div><div class="meter"><i id="missionBar"></i></div></div>
+    <div class="toast" id="toast"></div>
+    <div class="crosshair">+</div>
+    <div class="info-card" id="zoneCard"><span>SECTOR</span><b id="zoneName">Luminous Grove</b><small id="zoneHint">Thu hoạch tinh thể và tìm các cổng sao.</small></div>
+    <div class="minimap" id="minimap"><canvas id="miniCanvas" width="180" height="180"></canvas><span>RADAR</span></div>
+  </div>
+
+  <div id="startScreen" class="overlay">
+    <div class="panel hero-panel">
+      <div class="logo-orb">✦</div>
+      <h1>Nebula<br><em>Orchard</em></h1>
+      <p>Một khu vườn giữa các vì sao. Lái tàu, thu hoạch tinh thể, né bão plasma và nâng cấp trạm thu hoạch.</p>
+      <div class="feature-grid">
+        <div><b>03</b><span>Khu vực</span></div><div><b>30</b><span>Tinh thể / vòng</span></div><div><b>06</b><span>Nâng cấp</span></div>
+      </div>
+      <button id="startBtn" class="primary">BẮT ĐẦU HÀNH TRÌNH <span>→</span></button>
+      <div class="hint">Cảm ứng: kéo cần trái để lái · vuốt bên phải để xoay · nút BOOST để tăng tốc</div>
+    </div>
+  </div>
+
+  <div id="pauseScreen" class="overlay hidden">
+    <div class="panel"><div class="eyebrow">MISSION PAUSED</div><h2>Vườn sao đang chờ.</h2><button id="resumeBtn" class="primary">TIẾP TỤC</button><button id="resetBtn" class="secondary">CHƠI LẠI</button></div>
+  </div>
+
+  <div id="upgradeScreen" class="overlay hidden">
+    <div class="panel upgrade-panel"><div class="eyebrow">ORCHARD DOCK</div><h2>Nâng cấp tàu</h2><p class="muted">Dùng tín dụng để mở thêm năng lực.</p><div id="upgradeList"></div><button id="closeUpgrade" class="secondary">ĐÓNG</button></div>
+  </div>
+
+  <div id="touchUI" class="hidden">
+    <div id="joystick"><div class="joystick-ring"><div id="stick"></div></div></div>
+    <div id="rightTouch"></div>
+    <button id="boostBtn" class="touch-btn boost">BOOST</button>
+    <button id="actionBtn" class="touch-btn action">HARVEST</button>
+    <button id="pauseBtn" class="touch-btn pause">Ⅱ</button>
+    <button id="dockBtn" class="touch-btn dock">DOCK</button>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Open this folder with a local web server, then visit index.html through http://localhost:PORT.
+The app loads Three.js r0.186.0 from jsDelivr.
